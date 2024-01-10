@@ -1,6 +1,7 @@
 import { Image, Title, Prices } from './styles'
 import BannerImg from '../../assets/images/banner-homem-aranha.png'
 import Tag from '../Tag'
+import Button from '../Button'
 
 const Banner = () => (
   <Image style={{ backgroundImage: `url(${BannerImg})` }}>
@@ -11,6 +12,9 @@ const Banner = () => (
         From <span>R$ 250,00</span> <br />
         for just R$ 99,90
       </Prices>
+      <Button type="link" to="/product" title="">
+        Click here to take advantage of the offer
+      </Button>
     </div>
   </Image>
 )
