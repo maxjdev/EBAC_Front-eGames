@@ -1,16 +1,11 @@
+import { useState } from 'react'
 import Section from '../Section'
+import { iGalleryItem } from '../../pages/Home'
 import { Action, Item, Items, Modal, ModalContent } from './styles'
 import zoom from '../../assets/images/zoom.png'
 import play from '../../assets/images/play.png'
 import witch from '../../assets/images/gallery.jpg'
-import spiderman from '../../assets/images/banner-homem-aranha.png'
 import exit from '../../assets/images/fechar.png'
-import { useState } from 'react'
-
-interface iGalleryItem {
-  type: 'image' | 'video'
-  url: string
-}
 
 const mock: iGalleryItem[] = [
   {

@@ -1,12 +1,12 @@
 import ProductsList from '../../components/ProductsList'
-import Game from '../../models/Game'
+import { Game } from '../../pages/Home'
 import resident from '../../assets/images/resident.png'
 import diablo from '../../assets/images/diablo.png'
 import zelda from '../../assets/images/zelda.png'
 import starWars from '../../assets/images/star_wars.png'
 
 const promotions: Game[] = [
-  {
+  /*  {
     id: 1,
     category: 'Action',
     description:
@@ -45,11 +45,11 @@ const promotions: Game[] = [
     system: 'PS5',
     infos: ['5%', 'R$ 290,00'],
     image: starWars
-  }
+  } */
 ]
 
 const shortly: Game[] = [
-  {
+  /*   {
     id: 5,
     category: 'RPG',
     description:
@@ -88,7 +88,7 @@ const shortly: Game[] = [
     system: 'Windows',
     infos: ['17/05'],
     image: zelda
-  }
+  } */
 ]
 
 const Categories = () => (
