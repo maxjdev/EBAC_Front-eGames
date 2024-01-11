@@ -12,7 +12,7 @@ export const Banner = styled.div`
   background-size: 100%;
   padding-top: 16px;
 
-  &:after {
+  &::after {
     position: absolute;
     background-color: #000;
     width: 100%;

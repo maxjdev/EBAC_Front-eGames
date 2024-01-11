@@ -8,6 +8,13 @@ export const Card = styled.div`
   border-radius: 8px;
   position: relative;
 
+  img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
   ${TagContainer} {
     margin-right: 8px;
   }
@@ -31,5 +38,5 @@ export const Description = styled.p`
 export const Infos = styled.div`
   position: absolute;
   top: 16px;
-  rigth: 16px;
+  right: 16px;
 `
