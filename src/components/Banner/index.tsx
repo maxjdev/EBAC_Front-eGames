@@ -1,5 +1,4 @@
 import { Image, Title, Prices } from './styles'
-import BannerImg from '../../assets/images/banner-homem-aranha.png'
 import Tag from '../Tag'
 import Button from '../Button'
 import { useEffect, useState } from 'react'
