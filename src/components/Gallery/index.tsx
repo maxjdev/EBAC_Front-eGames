@@ -1,16 +1,11 @@
+import { useState } from 'react'
 import Section from '../Section'
+import { iGalleryItem } from '../../pages/Home'
 import { Action, Item, Items, Modal, ModalContent } from './styles'
 import zoom from '../../assets/images/zoom.png'
 import play from '../../assets/images/play.png'
 import witch from '../../assets/images/gallery.jpg'
-import spiderman from '../../assets/images/banner-homem-aranha.png'
 import exit from '../../assets/images/fechar.png'
-import { useState } from 'react'
-
-interface iGalleryItem {
-  type: 'image' | 'video'
-  url: string
-}
 
 const mock: iGalleryItem[] = [
   {
@@ -30,13 +25,14 @@ const mock: iGalleryItem[] = [
 type Props = {
   defaultCover: string
   name: string
+  items: iGalleryItem[]
 }
 
 interface ModalState extends iGalleryItem {
   isVisible: boolean
 }
 
-const Gallery = ({ defaultCover, name }: Props) => {
+const Gallery = ({ defaultCover, name, items }: Props) => {
   const [modal, setModal] = useState<ModalState>({
     isVisible: false,
     type: 'image',
@@ -65,7 +61,7 @@ const Gallery = ({ defaultCover, name }: Props) => {
     <>
       <Section title="Gallery" background="black">
         <Items>
-          {mock.map((media, index) => (
+          {items.map((media, index) => (
             <Item
               key={media.url}
               onClick={() => {
