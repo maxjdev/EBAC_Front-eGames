@@ -104,5 +104,6 @@ export const CartItem = styled.li`
     position: absolute;
     top: 8px;
     right: 0;
+    cursor: pointer;
   }
 `
