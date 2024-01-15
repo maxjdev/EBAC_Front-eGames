@@ -44,11 +44,13 @@ const Home = () => {
           games={onSaleGames}
           title={'Promotions'}
           background={'gray'}
+          id="on-sale"
         />
         <ProductsList
           games={soonGames}
           title={'Shortly'}
           background={'black'}
+          id="coming-soon"
         />
       </>
     )
