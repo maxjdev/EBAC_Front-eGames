@@ -14,6 +14,11 @@ export const ButtonContainer = styled.button<Props>`
   padding: 8px 16px;
   border-radius: 8px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `
 
 export const ButtonLink = styled(Link)`
@@ -25,5 +30,4 @@ export const ButtonLink = styled(Link)`
   padding: 8px 16px;
   text-decoration: none;
   border-radius: 8px;
-  cursor: pointer;
 `

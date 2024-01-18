@@ -23,6 +23,16 @@ export const Action = styled.div`
 
 export const Item = styled.li`
   position: relative;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    ${Action} {
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+  }
 
   > img {
     border: 2px solid ${Colors.white};
@@ -30,17 +40,6 @@ export const Item = styled.li`
     width: 150px;
     height: 150px;
     object-fit: cover;
-  }
-
-  &:hover {
-    ${Action} {
-      opacity: 1;
-      transition: opacity 0.5s ease;
-
-      img {
-        cursor: pointer;
-      }
-    }
   }
 `
 
