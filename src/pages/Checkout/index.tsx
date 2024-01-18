@@ -1,17 +1,21 @@
-import { useState } from 'react'
-import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import { useFormik } from 'formik'
+import { useState } from 'react'
+
 import Button from '../../components/Button'
 import Card from '../../components/Card'
-import { InputGroup, Row, TabButton } from './styles'
+
 import boleto from '../../assets/images/boleto.png'
 import cartao from '../../assets/images/cartao.png'
+
 import { usePurchaseMutation } from '../../services/api'
+
+import { InputGroup, Row, TabButton } from './styles'
 
 const Checkout = () => {
   const [payWithCard, setPayWithCard] = useState(false)
-  const [purchase, { isLoading, isError, data, isSuccess }] =
-    usePurchaseMutation()
+  const [purchase, { isLoading, data, isSuccess }] = usePurchaseMutation()
+
   const form = useFormik({
     initialValues: {
       fullName: '',
