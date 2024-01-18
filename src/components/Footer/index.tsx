@@ -9,19 +9,44 @@ const Footer = () => (
         <SectionTitle>Categories</SectionTitle>
         <Links>
           <li>
-            <Link to="/categories#rpg">RPG</Link>
+            <Link
+              title="Clique aqui para acessar jogos de RPG"
+              to="/categories#rpg"
+            >
+              RPG
+            </Link>
           </li>
           <li>
-            <Link to="/categories#action">Action</Link>
+            <Link
+              title="Clique aqui para acessar jogos de Ação"
+              to="/categories#action"
+            >
+              Action
+            </Link>
           </li>
           <li>
-            <Link to="/categories#sports">Sports</Link>
+            <Link
+              title="Clique aqui para acessar jogos de Esportes"
+              to="/categories#sports"
+            >
+              Sports
+            </Link>
           </li>
           <li>
-            <Link to="/categories#simulation">Simulation</Link>
+            <Link
+              title="Clique aqui para acessar jogos de Simulação"
+              to="/categories#simulation"
+            >
+              Simulation
+            </Link>
           </li>
           <li>
-            <Link to="/categories#fight">Fight</Link>
+            <Link
+              title="Clique aqui para acessar jogos de Luta"
+              to="/categories#fight"
+            >
+              Fight
+            </Link>
           </li>
         </Links>
       </FooterSection>
@@ -29,10 +54,20 @@ const Footer = () => (
         <SectionTitle>Quick access</SectionTitle>
         <Links>
           <li>
-            <Link to="/#on-sale">Promotions</Link>
+            <Link
+              title="Clique aqui para acessar a seção de promoções"
+              to="/#on-sale"
+            >
+              Promotions
+            </Link>
           </li>
           <li>
-            <Link to="/#coming-soon">Shortly</Link>
+            <Link
+              title="Clique aqui para acessar a seção de em breve"
+              to="/#coming-soon"
+            >
+              Shortly
+            </Link>
           </li>
         </Links>
       </FooterSection>

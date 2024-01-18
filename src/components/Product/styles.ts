@@ -11,6 +11,13 @@ export const Card = styled(Link)`
   text-decoration: none;
   color: ${Colors.white};
   display: block;
+  text-align: center;
+  height: 100%;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   img {
     display: block;
@@ -25,6 +32,7 @@ export const Card = styled(Link)`
 `
 
 export const TitleH3 = styled.h3`
+  text-align: center;
   font-weight: bold;
   font-size: 16px;
   display: block;

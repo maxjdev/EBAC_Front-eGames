@@ -1,26 +1,13 @@
 import { useState } from 'react'
+
 import Section from '../Section'
 import { iGalleryItem } from '../../pages/Home'
-import { Action, Item, Items, Modal, ModalContent } from './styles'
+
 import zoom from '../../assets/images/zoom.png'
 import play from '../../assets/images/play.png'
-import witch from '../../assets/images/gallery.jpg'
 import exit from '../../assets/images/fechar.png'
 
-const mock: iGalleryItem[] = [
-  {
-    type: 'image',
-    url: witch
-  },
-  {
-    type: 'image',
-    url: witch
-  },
-  {
-    type: 'video',
-    url: 'https://www.youtube.com/embed/yF29baX-IsA?si=Ab79Kc7MbtIMEaaM'
-  }
-]
+import { Action, Item, Items, Modal, ModalContent } from './styles'
 
 type Props = {
   defaultCover: string
