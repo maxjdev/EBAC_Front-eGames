@@ -3,18 +3,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import Button from '../Button'
 import Tag from '../Tag'
 
-import { formatPrice } from '../ProductsList'
+import { parseToBrl } from '../../utils/index'
 import { RootReducer } from '../../store'
 import { close, remove } from '../../store/reducers/cart'
 
-import {
-  Quantity,
-  Overlay,
-  CartContainer,
-  Sidebar,
-  Prices,
-  CartItem
-} from './styles'
+import * as S from './styles'
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
@@ -36,28 +29,28 @@ const Cart = () => {
   }
 
   return (
-    <CartContainer onClick={closeCart} className={isOpen ? 'is-open' : ''}>
-      <Overlay />
-      <Sidebar>
+    <S.CartContainer onClick={closeCart} className={isOpen ? 'is-open' : ''}>
+      <S.Overlay />
+      <S.Sidebar>
         <ul>
           {items.map((item) => (
-            <CartItem key={item.id}>
+            <S.CartItem key={item.id}>
               <img src={item.media.thumbnail} alt={item.name} />
               <div>
                 <h3>{item.name}</h3>
                 <Tag>{item.details.category}</Tag>
                 <Tag>{item.details.system}</Tag>
-                <span>{formatPrice(item.prices.current)}</span>
+                <span>{parseToBrl(item.prices.current)}</span>
               </div>
               <button onClick={() => removeItem(item.id)} type="button" />
-            </CartItem>
+            </S.CartItem>
           ))}
         </ul>
-        <Quantity>{items.length} Jogo(s) no carrinho</Quantity>
-        <Prices>
-          Total de {formatPrice(getTotalPrice())}{' '}
+        <S.Quantity>{items.length} Jogo(s) no carrinho</S.Quantity>
+        <S.Prices>
+          Total de {parseToBrl(getTotalPrice())}{' '}
           <span>Em até 6x s/ juros </span>
-        </Prices>
+        </S.Prices>
         <Button
           variant="primary"
           title="clique aqui para continuar com a compra"
@@ -65,8 +58,8 @@ const Cart = () => {
         >
           Continuar com a compra
         </Button>
-      </Sidebar>
-    </CartContainer>
+      </S.Sidebar>
+    </S.CartContainer>
   )
 }
 
