@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux'
 
 import { parseToBrl } from '../../utils/index'
-import { Game } from '../../pages/Home'
 import Tag from '../Tag'
 import Button from '../Button'
 import { add, open } from '../../store/reducers/cart'

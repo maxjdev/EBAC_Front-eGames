@@ -19,23 +19,11 @@ const Button = ({
   disabled,
   variant = 'primary'
 }: Props) => {
-  if (type === 'button') {
+  if (type === 'button' || type === 'submit') {
     return (
       <S.ButtonContainer
         variant={variant}
-        type="button"
-        title={title}
-        onClick={onClick}
-        disabled={disabled}
-      >
-        {children}
-      </S.ButtonContainer>
-    )
-  } else if (type === 'submit') {
-    return (
-      <S.ButtonContainer
-        variant={variant}
-        type="submit"
+        type={type}
         title={title}
         onClick={onClick}
         disabled={disabled}
