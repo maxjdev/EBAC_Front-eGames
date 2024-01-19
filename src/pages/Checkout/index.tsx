@@ -41,7 +41,7 @@ const Checkout = () => {
       deliveryEmail: '',
       confirmDeliveryEmail: '',
       cardOwner: '',
-      cpfOwner: '',
+      cpfCardOwner: '',
       cardDisplayName: '',
       cardNumber: '',
       expiresMonth: '',
@@ -66,7 +66,6 @@ const Checkout = () => {
       confirmDeliveryEmail: Yup.string()
         .oneOf([Yup.ref('deliveryEmail')], 'Os e-mails são diferentes')
         .required('O campo é obrigatório'),
-      /*  - - - > Card */
       cardOwner: Yup.string().when((values, schema) =>
         payWithCard ? schema.required('O campo é obrigatório') : schema
       ),
@@ -110,7 +109,7 @@ const Checkout = () => {
             name: values.cardDisplayName,
             number: values.cardNumber,
             owner: {
-              document: values.cpfOwner,
+              document: values.cpfCardOwner,
               name: values.cardOwner
             },
             expires: {
@@ -287,7 +286,7 @@ const Checkout = () => {
                 onClick={() => setPayWithCard(false)}
                 type="button"
               >
-                <img src={barCodeIcon} alt="boleto" />
+                <img src={barCodeIcon} alt="Boleto" />
                 Boleto bancário
               </S.TabButton>
               <S.TabButton
@@ -295,7 +294,7 @@ const Checkout = () => {
                 onClick={() => setPayWithCard(true)}
                 type="button"
               >
-                <img src={CardIcon} alt="cartão" />
+                <img src={CardIcon} alt="Cartão de crédito" />
                 Cartão de crédito
               </S.TabButton>
               <div className="margin-top">
@@ -319,18 +318,18 @@ const Checkout = () => {
                         />
                       </S.InputGroup>
                       <S.InputGroup>
-                        <label htmlFor="cpfOwner">
+                        <label htmlFor="cpfCardOwner">
                           CPF do titular do cartão
                         </label>
                         <InputMask
                           type="text"
-                          id="cpfOwner"
-                          name="cpfOwner"
-                          value={form.values.cpfOwner}
+                          id="cpfCardOwner"
+                          name="cpfCardOwner"
+                          value={form.values.cpfCardOwner}
                           onChange={form.handleChange}
                           onBlur={form.handleBlur}
                           className={
-                            checkInputHasError('cpfOwner') ? 'error' : ''
+                            checkInputHasError('cpfCardOwner') ? 'error' : ''
                           }
                           mask="999.999.999-99"
                         />
